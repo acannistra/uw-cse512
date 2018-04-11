@@ -1,0 +1,2058 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10200.17.0505.1445                               -->
+<workbook source-build='10.2.2 (10200.17.0505.1445)' source-platform='mac' version='10.2' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='2013-201802-exports' inline='true' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' version='10.2'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='2013-201802-exports' name='textscan.034bflv0lvzl2910irw5512ks7gt'>
+            <connection class='textscan' directory='/Users/tony/Dropbox/Projects/oil' filename='2013-201802-exports.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Countries' name='excel-direct.06w72ig1qk8de81gv5k580q9tq35'>
+            <connection class='excel-direct' cleaning='yes' compat='no' dataRefreshTime='' filename='/Users/tony/Downloads/Countries.xlsx' interpretationMode='1' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[2013-201802-exports.csv].[CTY_NAME]' />
+              <expression op='[Sheet1 Countries_Continents_csv].[Country]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.034bflv0lvzl2910irw5512ks7gt' name='2013-201802-exports.csv' table='[2013-201802-exports#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='integer' date-parse-format='MM' name='MONTH' ordinal='1' />
+              <column datatype='integer' name='CTY_CODE' ordinal='2' />
+              <column datatype='string' name='CTY_NAME' ordinal='3' />
+              <column datatype='integer' name='QTY_1_MO' ordinal='4' />
+              <column datatype='integer' name='DISTRICT' ordinal='5' />
+              <column datatype='string' name='DIST_NAME' ordinal='6' />
+              <column datatype='integer' name='E_COMMODITY' ordinal='7' />
+              <column datatype='string' name='SUMMARY_LVL' ordinal='8' />
+              <column datatype='integer' name='YEAR' ordinal='9' />
+              <column datatype='integer' name='day' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.06w72ig1qk8de81gv5k580q9tq35' name='Sheet1 Countries_Continents_csv' table='[Sheet1$Countries_Continents_csv]' type='table'>
+            <columns gridOrigin='A1:B195:no:A1:B195:0' outcome='2'>
+              <column datatype='string' name='Continent' ordinal='0' />
+              <column datatype='string' name='Country' ordinal='1' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MONTH</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MONTH]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>MONTH</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CTY_CODE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CTY_CODE]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>CTY_CODE</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CTY_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CTY_NAME]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>CTY_NAME</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>QTY_1_MO</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[QTY_1_MO]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>QTY_1_MO</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DISTRICT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DISTRICT]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>DISTRICT</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DIST_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DIST_NAME]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>DIST_NAME</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>E_COMMODITY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[E_COMMODITY]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>E_COMMODITY</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SUMMARY_LVL</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SUMMARY_LVL]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>SUMMARY_LVL</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day]</local-name>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias>day</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[2013-201802-exports.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Continent</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Continent]</local-name>
+            <parent-name>[Sheet1 Countries_Continents_csv]</parent-name>
+            <remote-alias>Continent</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[Sheet1 Countries_Continents_csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1 Countries_Continents_csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B195:no:A1:B195:0&quot;</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Cty Code' datatype='integer' name='[CTY_CODE]' role='dimension' type='ordinal' />
+      <column caption='Country' datatype='string' name='[CTY_NAME]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column caption='logqty' datatype='real' name='[Calculation_1946188411710058497]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='log([QTY_1_MO])' />
+      </column>
+      <column caption='Rank' datatype='integer' name='[Calculation_1946188412078239747]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='INDEX()'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Calculation1' datatype='date' name='[Calculation_1946188412082933769]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE(STR([MONTH]) + &quot;/01&quot; + &quot;/&quot; + STR([YEAR]))' />
+      </column>
+      <column datatype='string' name='[City (copy)]' role='dimension' semantic-role='[City].[Name]' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[DIST_NAME]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [DIST_NAME], &quot;,&quot;, 1 ) )' />
+      </column>
+      <column caption='Country1' datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Country Name' datatype='string' name='[Cty Name (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[CTY_NAME]' />
+      </column>
+      <column caption='District' datatype='integer' name='[DISTRICT]' role='measure' type='quantitative' />
+      <column caption='City' datatype='string' name='[DIST_NAME - Split 1]' role='dimension' semantic-role='[City].[Name]' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[DIST_NAME]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [DIST_NAME], &quot;,&quot;, 1 ) )' />
+        <semantic-values semantic-role='[City].[Name]'>
+          <semantic-value key='&quot;HOUSTON-GALVESTON&quot;' value='&quot;Galveston&quot;' />
+        </semantic-values>
+        <semantic-values semantic-role='[Geographical].[Latitude]'>
+          <semantic-value key='&quot;DULUTH&quot;' value='46.786700000000003' />
+          <semantic-value key='&quot;NORFOLK&quot;' value='36.8508' />
+          <semantic-value key='&quot;OGDENSBURG&quot;' value='44.694200000000002' />
+          <semantic-value key='&quot;PEMBINA&quot;' value='48.9664' />
+          <semantic-value key='&quot;PORTLAND&quot;' value='43.659100000000002' />
+        </semantic-values>
+        <semantic-values semantic-role='[Geographical].[Longitude]'>
+          <semantic-value key='&quot;DULUTH&quot;' value='-92.100499999999997' />
+          <semantic-value key='&quot;NORFOLK&quot;' value='-76.285899999999998' />
+          <semantic-value key='&quot;OGDENSBURG&quot;' value='-75.4863' />
+          <semantic-value key='&quot;PEMBINA&quot;' value='-97.243700000000004' />
+          <semantic-value key='&quot;PORTLAND&quot;' value='-70.256799999999998' />
+        </semantic-values>
+      </column>
+      <column caption='State' datatype='string' name='[DIST_NAME - Split 2]' role='dimension' semantic-role='[State].[Name]' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[DIST_NAME]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [DIST_NAME], &quot;,&quot;, 2 ) )' />
+      </column>
+      <column caption='Export District' datatype='string' name='[DIST_NAME]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='string' name='[Dist Name (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[DIST_NAME]' />
+      </column>
+      <column aggregation='Sum' caption='E Commodity' datatype='integer' name='[E_COMMODITY]' role='dimension' type='ordinal' />
+      <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+      <column caption='Summary Lvl' datatype='string' hidden='true' name='[SUMMARY_LVL]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='ordinal' />
+      <column caption='Day' datatype='integer' name='[day]' role='dimension' type='quantitative' />
+      <column-instance column='[CTY_NAME]' derivation='Attribute' name='[attr:CTY_NAME:nk]' pivot='key' type='nominal' />
+      <column-instance column='[DIST_NAME]' derivation='Attribute' name='[attr:DIST_NAME:nk]' pivot='key' type='nominal' />
+      <column-instance column='[CTY_NAME]' derivation='None' name='[none:CTY_NAME:nk]' pivot='key' type='nominal' />
+      <column-instance column='[City (copy)]' derivation='None' name='[none:City (copy):nk]' pivot='key' type='nominal' />
+      <column-instance column='[Cty Name (copy)]' derivation='None' name='[none:Cty Name (copy):nk]' pivot='key' type='nominal' />
+      <column-instance column='[DIST_NAME]' derivation='None' name='[none:DIST_NAME:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.516373' measure-ordering='alphabetic' measure-percentage='0.483627' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:CTY_NAME:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;DENMARK&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;PANAMA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ARGENTINA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;KOREA, SOUTH&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;UNITED ARAB EMIRATES&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;CANADA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;NETHERLANDS&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;GERMANY&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;SOUTH AFRICA&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;DOMINICAN REPUBLIC&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;PERU&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;CHINA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;NICARAGUA&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;ITALY&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;TRINIDAD AND TOBAGO&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;AUSTRALIA&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;MALAYSIA&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;UNITED KINGDOM&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;INDIA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;THAILAND&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;COLOMBIA&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;NIGERIA&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;GIBRALTAR&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;SPAIN&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;GREECE&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;SWITZERLAND&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;ISRAEL&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;TOGO&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;JAPAN&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;TURKEY&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;FRANCE&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;POLAND&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;CURACAO&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;NORWAY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BAHAMAS&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;MARSHALL ISLANDS&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;HONG KONG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;TAIWAN&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;GEORGIA&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;SINGAPORE&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;BRAZIL&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;MEXICO&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:City (copy):nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;LAREDO&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ANCHORAGE&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;SAN FRANCISCO&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;DETROIT&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;NEW ORLEANS&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;LOS ANGELES&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;DULUTH&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;PORTLAND&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;BALTIMORE&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;SAVANNAH&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;PEMBINA&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;GREAT FALLS&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;NEW YORK CITY&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;NORFOLK&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;PORT ARTHUR&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;PROVIDENCE&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;LOW VALUE&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;HOUSTON-GALVESTON&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BUFFALO&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;SEATTLE&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;OGDENSBURG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;MOBILE&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;CHICAGO&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Cty Name (copy):nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;DENMARK&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;PANAMA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ARGENTINA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;KOREA, SOUTH&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;UNITED ARAB EMIRATES&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;CANADA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;NETHERLANDS&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;GERMANY&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;SOUTH AFRICA&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;DOMINICAN REPUBLIC&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;PERU&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;CHINA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;NICARAGUA&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;ITALY&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;TRINIDAD AND TOBAGO&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;AUSTRALIA&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;MALAYSIA&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;UNITED KINGDOM&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;INDIA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;THAILAND&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;COLOMBIA&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;NIGERIA&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;GIBRALTAR&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;SPAIN&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;GREECE&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;SWITZERLAND&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;ISRAEL&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;TOGO&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;JAPAN&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;TURKEY&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;FRANCE&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;POLAND&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;CURACAO&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;NORWAY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BAHAMAS&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;MARSHALL ISLANDS&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;HONG KONG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;TAIWAN&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;GEORGIA&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;SINGAPORE&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;BRAZIL&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;MEXICO&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:DIST_NAME:nk]' palette='tableau20_10_0' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;LAREDO, TX&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ANCHORAGE, AK&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;SAN FRANCISCO, CA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;DETROIT, MI&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;NEW ORLEANS, LA&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;LOS ANGELES, CA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;DULUTH, MN&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;PORTLAND, ME&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;BALTIMORE, MD&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;SAVANNAH, GA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;PEMBINA, ND&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;GREAT FALLS, MT&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;NEW YORK CITY, NY&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;NORFOLK, VA&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;PORT ARTHUR, TX&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;PROVIDENCE, RI&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;LOW VALUE&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;HOUSTON-GALVESTON, TX&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BUFFALO, NY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;SEATTLE, WA&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;OGDENSBURG, NY&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;MOBILE, AL&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;CHICAGO, IL&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[attr:CTY_NAME:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;DENMARK&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;PANAMA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ARGENTINA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;KOREA, SOUTH&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;UNITED ARAB EMIRATES&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%many-values%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;CANADA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;NETHERLANDS&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;GERMANY&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;SOUTH AFRICA&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;DOMINICAN REPUBLIC&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;PERU&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;CHINA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;NICARAGUA&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;ITALY&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;TRINIDAD AND TOBAGO&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;AUSTRALIA&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;MALAYSIA&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;UNITED KINGDOM&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;INDIA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;THAILAND&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;COLOMBIA&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;NIGERIA&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;GIBRALTAR&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;SPAIN&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;GREECE&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;SWITZERLAND&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;ISRAEL&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;TOGO&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;JAPAN&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;TURKEY&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;FRANCE&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;POLAND&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;CURACAO&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;NORWAY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BAHAMAS&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;MARSHALL ISLANDS&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;HONG KONG&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;TAIWAN&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;GEORGIA&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;SINGAPORE&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;BRAZIL&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;MEXICO&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[attr:DIST_NAME:nk]' palette='tableau20_10_0' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;LAREDO, TX&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ANCHORAGE, AK&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;SAN FRANCISCO, CA&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;DETROIT, MI&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;NEW ORLEANS, LA&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;LOS ANGELES, CA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;DULUTH, MN&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;PORTLAND, ME&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;BALTIMORE, MD&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;SAVANNAH, GA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;PEMBINA, ND&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;GREAT FALLS, MT&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;NEW YORK CITY, NY&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;NORFOLK, VA&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;PORT ARTHUR, TX&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;PROVIDENCE, RI&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;LOW VALUE&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;HOUSTON-GALVESTON, TX&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BUFFALO, NY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;SEATTLE, WA&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;OGDENSBURG, NY&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;MOBILE, AL&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;CHICAGO, IL&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[City].[Name]' value='%null%' />
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <sort class='manual' column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </sort>
+      </default-sorts>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Crude Exports By Country Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Country' datatype='string' name='[CTY_NAME]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column caption='Calculation1' datatype='date' name='[Calculation_1946188412082933769]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE(STR([MONTH]) + &quot;/01&quot; + &quot;/&quot; + STR([YEAR]))' />
+            </column>
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_1946188412082933769]' derivation='Month' name='[mn:Calculation_1946188412082933769:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CTY_NAME]' derivation='None' name='[none:CTY_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[sum:QTY_1_MO:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1946188412082933769]' derivation='Year' name='[yr:Calculation_1946188412082933769:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]' />
+              <text column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.6921546459197998' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]</rows>
+        <cols>([federated.0nyk1ug1uop5f612xrqzb1ryjog4].[yr:Calculation_1946188412082933769:ok] / [federated.0nyk1ug1uop5f612xrqzb1ryjog4].[mn:Calculation_1946188412082933769:ok])</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Percentage of Total Crude Exports By Destination Country (Since 2013)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Country' datatype='string' name='[CTY_NAME]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column caption='Export District' datatype='string' name='[DIST_NAME]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column-instance column='[DIST_NAME]' derivation='Attribute' name='[attr:DIST_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CTY_NAME]' derivation='None' name='[none:CTY_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[pcto:sum:QTY_1_MO:qk:5]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[CTY_NAME]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Longitude (generated)]' field-type='quantitative' max='21094627.622665208' min='-18138970.255550064' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Latitude (generated)]' field-type='quantitative' max='13727137.670345347' min='-9343391.9547996931' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='false' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='true' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='false' />
+            <format attr='enabled' id='um_adm0_lbl' value='false' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[pcto:sum:QTY_1_MO:qk:5]' />
+              <text column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[pcto:sum:QTY_1_MO:qk:5]' />
+              <lod column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]' />
+              <lod column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[attr:DIST_NAME:nk]' />
+              <geometry column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='4.2105045318603516' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Latitude (generated)]</rows>
+        <cols>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Longitude (generated)]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 10'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column datatype='string' name='[Continent]' role='dimension' type='nominal' />
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[sum:QTY_1_MO:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Continent:nk]</rows>
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Country' datatype='string' name='[CTY_NAME]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column caption='logqty' datatype='real' name='[Calculation_1946188411710058497]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='log([QTY_1_MO])' />
+            </column>
+            <column caption='Country Name' datatype='string' name='[Cty Name (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[CTY_NAME]' />
+            </column>
+            <column caption='City' datatype='string' name='[DIST_NAME - Split 1]' role='dimension' semantic-role='[City].[Name]' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[DIST_NAME]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( [DIST_NAME], &quot;,&quot;, 1 ) )' />
+              <semantic-values semantic-role='[City].[Name]'>
+                <semantic-value key='&quot;HOUSTON-GALVESTON&quot;' value='&quot;Galveston&quot;' />
+              </semantic-values>
+              <semantic-values semantic-role='[Geographical].[Latitude]'>
+                <semantic-value key='&quot;DULUTH&quot;' value='46.786700000000003' />
+                <semantic-value key='&quot;NORFOLK&quot;' value='36.8508' />
+                <semantic-value key='&quot;OGDENSBURG&quot;' value='44.694200000000002' />
+                <semantic-value key='&quot;PEMBINA&quot;' value='48.9664' />
+                <semantic-value key='&quot;PORTLAND&quot;' value='43.659100000000002' />
+              </semantic-values>
+              <semantic-values semantic-role='[Geographical].[Longitude]'>
+                <semantic-value key='&quot;DULUTH&quot;' value='-92.100499999999997' />
+                <semantic-value key='&quot;NORFOLK&quot;' value='-76.285899999999998' />
+                <semantic-value key='&quot;OGDENSBURG&quot;' value='-75.4863' />
+                <semantic-value key='&quot;PEMBINA&quot;' value='-97.243700000000004' />
+                <semantic-value key='&quot;PORTLAND&quot;' value='-70.256799999999998' />
+              </semantic-values>
+            </column>
+            <column caption='Export District' datatype='string' name='[DIST_NAME]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column-instance column='[Cty Name (copy)]' derivation='None' name='[none:Cty Name (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[DIST_NAME - Split 1]' derivation='None' name='[none:DIST_NAME - Split 1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1946188411710058497]' derivation='Sum' name='[sum:Calculation_1946188411710058497:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Cty Name (copy):nk]' />
+              <size column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:Calculation_1946188411710058497:qk]' />
+              <lod column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME - Split 1:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+                <format attr='vertical-align' value='top' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='4.1456303596496582' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Latitude (generated)]</rows>
+        <cols>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Longitude (generated)]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Country' datatype='string' name='[CTY_NAME]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column caption='Export District' datatype='string' name='[DIST_NAME]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column-instance column='[CTY_NAME]' derivation='None' name='[none:CTY_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DIST_NAME]' derivation='None' name='[none:DIST_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[sum:QTY_1_MO:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='computed' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]' direction='ASC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+          <filter class='categorical' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:DIST_NAME:nk]' />
+              <groupfilter function='member' level='[none:DIST_NAME:nk]' member='&quot;LOW VALUE&quot;' />
+            </groupfilter>
+          </filter>
+          <sort class='computed' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]' direction='DESC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+          <slices>
+            <column>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='subtitle' class='0' field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' scope='cols' value='true' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</rows>
+        <cols>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Top 5 Crude Export Destination Countries – By Year'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Country' datatype='string' name='[CTY_NAME]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column caption='Rank' datatype='integer' name='[Calculation_1946188412078239747]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='INDEX()'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Country Name' datatype='string' name='[Cty Name (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[CTY_NAME]' />
+            </column>
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='ordinal' />
+            <column-instance column='[Cty Name (copy)]' derivation='None' name='[none:Cty Name (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[pcto:sum:QTY_1_MO:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Pane' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[sum:QTY_1_MO:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1946188412078239747]' derivation='User' name='[usr:Calculation_1946188412078239747:ok:59]' pivot='key' type='ordinal'>
+              <table-calc level-break='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Cty Name (copy)]' ordering-type='Field'>
+                <order field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[YEAR]' />
+                <order field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Cty Name (copy)]' />
+                <sort direction='DESC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+              </table-calc>
+            </column-instance>
+            <column-instance column='[Calculation_1946188412078239747]' derivation='User' name='[usr:Calculation_1946188412078239747:qk:5]' pivot='key' type='quantitative'>
+              <table-calc level-break='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Cty Name (copy)]' ordering-type='Field'>
+                <order field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[YEAR]' />
+                <order field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[Cty Name (copy)]' />
+                <sort direction='DESC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+              </table-calc>
+            </column-instance>
+          </datasource-dependencies>
+          <sort class='manual' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Cty Name (copy):nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;CANADA&quot;</bucket>
+              <bucket>&quot;CHINA&quot;</bucket>
+              <bucket>&quot;NETHERLANDS&quot;</bucket>
+              <bucket>&quot;ITALY&quot;</bucket>
+              <bucket>&quot;KOREA, SOUTH&quot;</bucket>
+              <bucket>&quot;UNITED KINGDOM&quot;</bucket>
+              <bucket>&quot;SPAIN&quot;</bucket>
+              <bucket>&quot;SINGAPORE&quot;</bucket>
+              <bucket>&quot;CURACAO&quot;</bucket>
+              <bucket>&quot;FRANCE&quot;</bucket>
+              <bucket>&quot;COLOMBIA&quot;</bucket>
+              <bucket>&quot;JAPAN&quot;</bucket>
+              <bucket>&quot;SWITZERLAND&quot;</bucket>
+              <bucket>&quot;BAHAMAS&quot;</bucket>
+              <bucket>&quot;PERU&quot;</bucket>
+              <bucket>&quot;INDIA&quot;</bucket>
+              <bucket>&quot;THAILAND&quot;</bucket>
+              <bucket>&quot;PANAMA&quot;</bucket>
+              <bucket>&quot;ARGENTINA&quot;</bucket>
+              <bucket>&quot;MALAYSIA&quot;</bucket>
+              <bucket>&quot;NICARAGUA&quot;</bucket>
+              <bucket>&quot;BRAZIL&quot;</bucket>
+              <bucket>&quot;TAIWAN&quot;</bucket>
+              <bucket>&quot;HONG KONG&quot;</bucket>
+              <bucket>&quot;DOMINICAN REPUBLIC&quot;</bucket>
+              <bucket>&quot;NORWAY&quot;</bucket>
+              <bucket>&quot;TOGO&quot;</bucket>
+              <bucket>&quot;UNITED ARAB EMIRATES&quot;</bucket>
+              <bucket>&quot;DENMARK&quot;</bucket>
+              <bucket>&quot;ISRAEL&quot;</bucket>
+              <bucket>&quot;NIGERIA&quot;</bucket>
+              <bucket>&quot;POLAND&quot;</bucket>
+              <bucket>&quot;SOUTH AFRICA&quot;</bucket>
+              <bucket>&quot;GERMANY&quot;</bucket>
+              <bucket>&quot;TRINIDAD AND TOBAGO&quot;</bucket>
+              <bucket>&quot;GREECE&quot;</bucket>
+              <bucket>&quot;MARSHALL ISLANDS&quot;</bucket>
+              <bucket>&quot;TURKEY&quot;</bucket>
+              <bucket>&quot;GIBRALTAR&quot;</bucket>
+              <bucket>&quot;MEXICO&quot;</bucket>
+              <bucket>&quot;AUSTRALIA&quot;</bucket>
+              <bucket>&quot;GEORGIA&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </sort>
+          <sort class='natural' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]' direction='DESC' />
+          <filter class='quantitative' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:qk:5]' included-values='in-range'>
+            <min>1</min>
+            <max>5</max>
+          </filter>
+          <slices>
+            <column>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:qk:5]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:59]' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok] / ([federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:59] / [federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Cty Name (copy):nk]))</rows>
+        <cols>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[pcto:sum:QTY_1_MO:qk:2]</cols>
+        <percentages enabled='true' mode='pane' />
+      </table>
+    </worksheet>
+    <worksheet name='Top 5 Crude Export Districts Per Year'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Rank' datatype='integer' name='[Calculation_1946188412078239747]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='INDEX()'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Export District' datatype='string' name='[DIST_NAME]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='ordinal' />
+            <column-instance column='[DIST_NAME]' derivation='None' name='[none:DIST_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[sum:QTY_1_MO:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1946188412078239747]' derivation='User' name='[usr:Calculation_1946188412078239747:ok:23]' pivot='key' type='ordinal'>
+              <table-calc level-break='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[DIST_NAME]' ordering-type='Field'>
+                <order field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[YEAR]' />
+                <order field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[DIST_NAME]' />
+                <sort direction='DESC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+              </table-calc>
+            </column-instance>
+            <column-instance column='[Calculation_1946188412078239747]' derivation='User' name='[usr:Calculation_1946188412078239747:qk:1]' pivot='key' type='quantitative'>
+              <table-calc level-break='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[DIST_NAME]' ordering-type='Field'>
+                <order field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[YEAR]' />
+                <order field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[DIST_NAME]' />
+                <sort direction='DESC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+              </table-calc>
+            </column-instance>
+          </datasource-dependencies>
+          <sort class='computed' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]' direction='DESC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+          <sort class='manual' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]' direction='ASC'>
+            <dictionary>
+              <bucket>2017</bucket>
+              <bucket>2016</bucket>
+              <bucket>2015</bucket>
+              <bucket>2014</bucket>
+              <bucket>2013</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </sort>
+          <sort class='manual' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:23]' direction='ASC'>
+            <dictionary>
+              <bucket>1</bucket>
+              <bucket>2</bucket>
+              <bucket>3</bucket>
+              <bucket>4</bucket>
+              <bucket>5</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </sort>
+          <filter class='quantitative' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:qk:1]' included-values='in-range'>
+            <min>1</min>
+            <max>5</max>
+          </filter>
+          <slices>
+            <column>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:qk:1]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:23]' value='20' />
+            <format attr='border-style' data-class='total' scope='rows' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:23]' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='total' scope='rows' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='in-tooltip' field='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:23]' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='1.1314364671707153' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows onTop='true'>([federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok] / ([federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:23] / [federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]))</rows>
+        <cols>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Total Crude Exports Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Country' datatype='string' name='[CTY_NAME]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column caption='Calculation1' datatype='date' name='[Calculation_1946188412082933769]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE(STR([MONTH]) + &quot;/01&quot; + &quot;/&quot; + STR([YEAR]))' />
+            </column>
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_1946188412082933769]' derivation='Month' name='[mn:Calculation_1946188412082933769:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CTY_NAME]' derivation='None' name='[none:CTY_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[sum:QTY_1_MO:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1946188412082933769]' derivation='Year' name='[yr:Calculation_1946188412082933769:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.6921546459197998' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]</rows>
+        <cols>([federated.0nyk1ug1uop5f612xrqzb1ryjog4].[yr:Calculation_1946188412082933769:ok] / [federated.0nyk1ug1uop5f612xrqzb1ryjog4].[mn:Calculation_1946188412082933769:ok])</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Total Crude Exports by Country (since 2013)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Country' datatype='string' name='[CTY_NAME]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column caption='Country Name' datatype='string' name='[Cty Name (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[CTY_NAME]' />
+            </column>
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column-instance column='[Cty Name (copy)]' derivation='None' name='[none:Cty Name (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[pcto:sum:QTY_1_MO:qk:6]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Table' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[sum:QTY_1_MO:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='computed' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Cty Name (copy):nk]' direction='DESC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Cty Name (copy):nk]</rows>
+        <cols>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[pcto:sum:QTY_1_MO:qk:6]</cols>
+        <percentages enabled='true' mode='table' />
+      </table>
+    </worksheet>
+    <worksheet name='Total Crude Exports by District (since 2013)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2013-201802-exports' name='federated.0nyk1ug1uop5f612xrqzb1ryjog4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nyk1ug1uop5f612xrqzb1ryjog4'>
+            <column caption='Export District' datatype='string' name='[DIST_NAME]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Barrels' datatype='integer' name='[QTY_1_MO]' role='measure' type='quantitative' />
+            <column-instance column='[DIST_NAME]' derivation='None' name='[none:DIST_NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[QTY_1_MO]' derivation='Sum' name='[sum:QTY_1_MO:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:DIST_NAME:nk]' />
+              <groupfilter function='member' level='[none:DIST_NAME:nk]' member='&quot;LOW VALUE&quot;' />
+            </groupfilter>
+          </filter>
+          <sort class='computed' column='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]' direction='DESC' using='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]' />
+          <slices>
+            <column>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='border-style' data-class='total' scope='rows' value='none' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='total' scope='rows' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='1.1314364671707153' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows onTop='true'>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</rows>
+        <cols>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Top 5 Crude Export Destination Countries – By Year'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:24]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:57]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Total Crude Exports by Country (since 2013)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='horizontal'>
+              <node-reference>
+                <axis>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:QTY_1_MO:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:24]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:57]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Percentage of Total Crude Exports By Destination Country (Since 2013)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[pcto:sum:QTY_1_MO:qk:5]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:qk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[pcto:sum:QTY_1_MO:qk:5]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Top 5 Crude Export Districts Per Year'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:23]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Total Crude Exports by District (since 2013)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <fields>
+                  <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</field>
+                </fields>
+                <multibucket>
+                  <bucket>&quot;LOW VALUE&quot;</bucket>
+                </multibucket>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok:23]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[usr:Calculation_1946188412078239747:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Crude Exports By Country Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[yr:Calculation_1946188412082933769:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Total Crude Exports Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:ok]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[yr:Calculation_1946188412082933769:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Cty Name (copy):nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[sum:Calculation_1946188411710058497:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>2015</bucket>
+          </multibucket>
+        </current-page>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Cty Name (copy):nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME - Split 1:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:MONTH:qk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:YEAR:qk]</field>
+          </color-one-way>
+        </highlight>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:CTY_NAME:nk]</field>
+            <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:DIST_NAME:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 10'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <fields>
+                  <field>[federated.0nyk1ug1uop5f612xrqzb1ryjog4].[none:Continent:nk]</field>
+                </fields>
+                <multibucket>
+                  <bucket>%null%</bucket>
+                </multibucket>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+      </viewpoint>
+    </window>
+  </windows>
+</workbook>
